@@ -1,54 +1,52 @@
 {
-  "name": "html-server",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "start": "bun run index.ts",
-    "dev": "bun --watch run index.ts",
-    "build": "bun build index.ts --outdir dist --target bun",
-    "start:prod": "npm run build && bun run dist/index.js",
-    "format": "prettier --write \"**/*.{ts,js,json}\"",
-    "docker:dev": "docker compose up html-server-dev",
-    "docker:prod": "docker compose up html-server-prod",
-    "docker:dev:build": "docker compose build html-server-dev",
-    "docker:prod:build": "docker compose build html-server-prod",
-    "clean": "rm -rf dist node_modules",
-    "prepare": "husky",
-    "commit": "cz",
-    "commitlint": "commitlint --edit",
-    "test": ""
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@types/bun": "latest",
-    "commitizen": "^4.3.1",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "9",
-    "lint-staged": "^15.5.2",
-    "prettier": "~3.5.3"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "dependencies": {
-    "pino": "^9.6.0",
-    "pino-pretty": "^13.0.0"
-  },
-  "engines": {
-    "bun": ">=1.2.12"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
+    "name": "html-server",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "start": "bun run index.ts",
+        "dev": "bun --watch run index.ts",
+        "build": "bun build index.ts --outdir dist --target bun",
+        "start:prod": "npm run build && bun run dist/index.js",
+        "format": "prettier --write \"**/*.{ts,js,json}\"",
+        "docker:dev": "docker compose up html-server-dev",
+        "docker:prod": "docker compose up html-server-prod",
+        "docker:dev:build": "docker compose build html-server-dev",
+        "docker:prod:build": "docker compose build html-server-prod",
+        "clean": "rm -rf dist node_modules",
+        "prepare": "husky",
+        "commit": "cz",
+        "commitlint": "commitlint --edit",
+        "test": ""
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.8.0",
+        "@commitlint/config-conventional": "^19.8.0",
+        "@types/bun": "latest",
+        "commitizen": "^4.3.1",
+        "cz-conventional-changelog": "^3.3.0",
+        "husky": "9",
+        "lint-staged": "^15.5.2",
+        "prettier": "~3.5.3"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "dependencies": {
+        "pino": "^9.6.0",
+        "pino-pretty": "^13.0.0"
+    },
+    "engines": {
+        "bun": ">=1.2.12"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx,vue,json}": [
+            "prettier --write"
+        ]
     }
-  },
-  "lint-staged": {
-    "*": {
-      "{js,jsx,ts,tsx,vue}": [
-        "prettier --write"
-      ]
-    }
-  }
 }
