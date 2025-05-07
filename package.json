@@ -14,7 +14,7 @@
         "docker:dev:build": "docker compose build html-server-dev",
         "docker:prod:build": "docker compose build html-server-prod",
         "clean": "rm -rf dist node_modules",
-        "prepare": "husky",
+        "prepare": "husky || true",
         "commit": "cz",
         "commitlint": "commitlint --edit",
         "test": ""
